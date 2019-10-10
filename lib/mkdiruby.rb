@@ -54,7 +54,7 @@ def perform
 	system 'bundle install'
 	system 'rspec --init'
 	system 'git init'
-	system "hub create -d '<#{repo_name}>'"
+	system "hub create -d '#{repo_name} - This repo was generated with a ruby script'"
 	system 'git add .'
 	system "git commit -m 'Initial commit'"
 	system 'git push -u origin master'
