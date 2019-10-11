@@ -23,7 +23,7 @@ def perform
 
 	check_if_user_gave_input
 	repo_name = get_user_input
-	genfile_content = "source 'https://rubygems.org'\nruby '2.5.1'\ngem 'rubocop', '~> 0.57.2'\ngem 'rspec'\ngem 'pry'\ngem 'colorize'"
+	gemfile_content = "source 'https://rubygems.org'\nruby '2.5.1'\ngem 'rubocop', '~> 0.57.2'\ngem 'rspec'\ngem 'pry'\ngem 'colorize'"
 	app_rb_content = "require 'colorize'\nrequire 'nokogiri'\nrequire 'open-uri'\n\n\ndef perform\n\nend\n\nperform"
 	app_rb_spec_content = "require_relative '../lib/app'\n\ndescribe 'perform method, it should perform' do\n\tit 'my test' do\n\texpect(make_hash("","")).to eq(nil)\n\tend\nend"
 	gitignore_content = ".env"
@@ -34,7 +34,7 @@ def perform
 	Dir.mkdir("#{repo_name}/lib")
 	Dir.mkdir("#{repo_name}/spec")
 	file = File.new("#{repo_name}/Gemfile", "w")
-	file.puts genfile_content
+	file.puts gemfile_content
 	file.close
 	file = File.new("#{repo_name}/lib/app.rb", 'w')
 	file.puts app_rb_content
