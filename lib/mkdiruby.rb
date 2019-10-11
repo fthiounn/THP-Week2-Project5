@@ -1,20 +1,20 @@
 #Creatin d'un repertoire complet de projet ruby
-#1. les dossiers : 	XNAME/    						
-# 					XNAME/lib/
-# 					XNAME/spec/
+#1. les dossiers : 			-NAME/    						
+# 					-NAME/lib/
+# 					-NAME/spec/
 #2. les fichiers :  XNAME/lib/app.rb
-# 					XReadme.md
-# 					XNAME/spec/app_spec.rb
-# 					XNAME/Gemfile
-# 					XNAME/.env
-#   				XNAME/.gitignore
+# 					-NAME/Readme.md
+# 					-NAME/spec/app_spec.rb
+# 					-NAME/Gemfile
+# 					-NAME/.env
+#   					-NAME/.gitignore
 # => INITIALISER GEMFILE AVEC UN PACKAGE DE BASE
 #3. initialiser le dossier
-# 					Xcd NAME
-# 					Xrspec --init
-# 					Xbundle install
-# 					Xgit init
-# 					Xgit add .
+# 					-cd NAME
+# 					-rspec --init
+# 					-bundle install
+# 					-git init
+# 					-git add .
 # 					-git commit -m "First commit"
 #					-git remote add origin git@github.com:fthiounn/NAME.git
 # 					-git push -u origin master
