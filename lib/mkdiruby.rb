@@ -1,13 +1,13 @@
 #Creatin d'un repertoire complet de projet ruby
-#1. les dossiers : 			-NAME/    						
+#1. les dossiers : 	-NAME/    						
 # 					-NAME/lib/
 # 					-NAME/spec/
-#2. les fichiers :  XNAME/lib/app.rb
+#2. les fichiers :  XNAME/app.rb
 # 					-NAME/Readme.md
 # 					-NAME/spec/app_spec.rb
 # 					-NAME/Gemfile
 # 					-NAME/.env
-#   					-NAME/.gitignore
+#   				-NAME/.gitignore
 # => INITIALISER GEMFILE AVEC UN PACKAGE DE BASE
 #3. initialiser le dossier
 # 					-cd NAME
@@ -21,15 +21,17 @@
 
 def perform
 
+	#setting the content of the files we will create
 	check_if_user_gave_input
 	repo_name = get_user_input
 	gemfile_content = "source 'https://rubygems.org'\nruby '2.5.1'\ngem 'rubocop', '~> 0.57.2'\ngem 'rspec'\ngem 'pry'\ngem 'colorize'"
-	app_rb_content = "require 'colorize'\nrequire 'nokogiri'\nrequire 'open-uri'\n\n\ndef perform\n\nend\n\nperform"
+	app_rb_content = "require 'colorize'\nrequire 'nokogiri'\nrequire 'open-uri'\n\n\nclass App\n\ndef perform\n\nend\n\nperform\nend\n\n\nApp.new"
 	app_rb_spec_content = "require_relative '../lib/app'\n\ndescribe 'perform method, it should perform' do\n\tit 'my test' do\n\texpect(make_hash("","")).to eq(nil)\n\tend\nend"
 	gitignore_content = ".env"
 	readme_content = "COMPLETER LE READ ME \n"
 	name_curl = "name"
 
+	#Creating the different files and filling them
 	Dir.mkdir(repo_name)
 	Dir.mkdir("#{repo_name}/lib")
 	Dir.mkdir("#{repo_name}/spec")
@@ -50,6 +52,7 @@ def perform
 	file.puts readme_content
 	file.close
 
+	#Creating the git repo and initialization of gemfile and rspec
 	Dir.chdir("#{repo_name}")
 	system 'bundle install'
 	system 'rspec --init'
@@ -60,6 +63,7 @@ def perform
 	system 'git push -u origin master'
 
 end
+#Both methods handle the user input
 def check_if_user_gave_input
   abort("mkdiruby : Please enter the new Repository name") if ARGV.empty?
 end
