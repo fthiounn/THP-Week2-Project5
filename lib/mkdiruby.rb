@@ -24,8 +24,8 @@ def perform
 	#setting the content of the files we will create
 	check_if_user_gave_input
 	repo_name = get_user_input
-	gemfile_content = "source 'https://rubygems.org'\nruby '2.5.1'\ngem 'rubocop', '~> 0.57.2'\ngem 'rspec'\ngem 'pry'\ngem 'colorize'"
-	app_rb_content = "require 'colorize'\nrequire 'nokogiri'\nrequire 'open-uri'\n\n\nclass App\n\ndef perform\n\nend\n\nperform\nend\n\n\nApp.new"
+	gemfile_content = "source 'https://rubygems.org'\nruby '2.5.1'\n\n\ngem 'rubocop', '~> 0.57.2'\ngem 'rspec'\ngem 'pry'\ngem 'colorize'"
+	app_rb_content = "require 'bundler'\nBundler.require\n\n\n\n\n\tdef perform\n\nend\n\nperform\n\n"
 	app_rb_spec_content = "require_relative '../lib/app'\n\ndescribe 'perform method, it should perform' do\n\tit 'my test' do\n\texpect(make_hash("","")).to eq(nil)\n\tend\nend"
 	gitignore_content = ".env"
 	readme_content = "COMPLETER LE READ ME \n"
