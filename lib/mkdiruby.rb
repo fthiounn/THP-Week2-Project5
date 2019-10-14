@@ -27,7 +27,7 @@ def perform
 	gemfile_content = "source 'https://rubygems.org'\nruby '2.5.1'\n\n\ngem 'rubocop', '~> 0.57.2'\ngem 'rspec'\ngem 'pry'\ngem 'colorize'"
 	app_rb_content = "require 'bundler'\nBundler.require\n\n\n\n\n\tdef perform\n\nend\n\nperform\n\n"
 	app_rb_spec_content = "require_relative '../lib/app'\n\ndescribe 'perform method, it should perform' do\n\tit 'my test' do\n\texpect(make_hash("","")).to eq(nil)\n\tend\nend"
-	gitignore_content = ".env"
+	gitignore_content = ".env\n .DS_Store"
 	readme_content = "COMPLETER LE READ ME \n"
 	name_curl = "name"
 
