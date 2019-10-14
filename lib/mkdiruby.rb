@@ -1,20 +1,20 @@
 #Creatin d'un repertoire complet de projet ruby
-#1. les dossiers : 	XNAME/    						
-# 					XNAME/lib/
-# 					XNAME/spec/
+#1. les dossiers : 			-NAME/    						
+# 					-NAME/lib/
+# 					-NAME/spec/
 #2. les fichiers :  XNAME/lib/app.rb
-# 					XReadme.md
-# 					XNAME/spec/app_spec.rb
-# 					XNAME/Gemfile
-# 					XNAME/.env
-#   				XNAME/.gitignore
+# 					-NAME/Readme.md
+# 					-NAME/spec/app_spec.rb
+# 					-NAME/Gemfile
+# 					-NAME/.env
+#   					-NAME/.gitignore
 # => INITIALISER GEMFILE AVEC UN PACKAGE DE BASE
 #3. initialiser le dossier
-# 					Xcd NAME
-# 					Xrspec --init
-# 					Xbundle install
-# 					Xgit init
-# 					Xgit add .
+# 					-cd NAME
+# 					-rspec --init
+# 					-bundle install
+# 					-git init
+# 					-git add .
 # 					-git commit -m "First commit"
 #					-git remote add origin git@github.com:fthiounn/NAME.git
 # 					-git push -u origin master
@@ -23,7 +23,7 @@ def perform
 
 	check_if_user_gave_input
 	repo_name = get_user_input
-	genfile_content = "source 'https://rubygems.org'\nruby '2.5.1'\ngem 'rubocop', '~> 0.57.2'\ngem 'rspec'\ngem 'pry'\ngem 'colorize'"
+	gemfile_content = "source 'https://rubygems.org'\nruby '2.5.1'\ngem 'rubocop', '~> 0.57.2'\ngem 'rspec'\ngem 'pry'\ngem 'colorize'"
 	app_rb_content = "require 'colorize'\nrequire 'nokogiri'\nrequire 'open-uri'\n\n\ndef perform\n\nend\n\nperform"
 	app_rb_spec_content = "require_relative '../lib/app'\n\ndescribe 'perform method, it should perform' do\n\tit 'my test' do\n\texpect(make_hash("","")).to eq(nil)\n\tend\nend"
 	gitignore_content = ".env"
@@ -34,7 +34,7 @@ def perform
 	Dir.mkdir("#{repo_name}/lib")
 	Dir.mkdir("#{repo_name}/spec")
 	file = File.new("#{repo_name}/Gemfile", "w")
-	file.puts genfile_content
+	file.puts gemfile_content
 	file.close
 	file = File.new("#{repo_name}/lib/app.rb", 'w')
 	file.puts app_rb_content
