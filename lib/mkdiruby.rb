@@ -38,7 +38,7 @@ def perform
 	file = File.new("#{repo_name}/Gemfile", "w")
 	file.puts gemfile_content
 	file.close
-	file = File.new("#{repo_name}/lib/app.rb", 'w')
+	file = File.new("#{repo_name}/app.rb", 'w')
 	file.puts app_rb_content
 	file.close
 	file = File.new("#{repo_name}/spec/app_spec.rb", 'w')
