@@ -7,7 +7,7 @@ def perform
 	repo_name = get_user_input
 
 	#Creating the git repo and initialization of gemfile and rspec
-	system "rails new -d postgresql #{repo_name} "
+	system " rails _5.2.3_ new -d postgresql #{repo_name} "
 	Dir.chdir("#{repo_name}")
 	system 'bundle install'
 	system 'rspec --init'
