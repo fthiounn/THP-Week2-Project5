@@ -5,10 +5,21 @@ def perform
 	#setting the content of the files we will create
 	check_if_user_gave_input
 	repo_name = get_user_input
+  gitignore = ".env\n.DS_Store"
+  gems = "#gem for this project\ngem 'font-awesome-sass', '~> 5.11.2'\ngem 'bcrypt'\ngem 'table_print'\ngem 'faker'\ngem 'dotenv-rails'\ngem 'devise'"
 
 	#Creating the git repo and initialization of gemfile and rspec
 	system " rails _5.2.3_ new -d postgresql #{repo_name} "
 	Dir.chdir("#{repo_name}")
+
+  #adding .env and .ds_store to gitignore
+  open('.gitignore', 'a') { |f|
+  f.puts gitignore
+  }
+  #adding a few of my usual gems to the project
+  open('Gemfile', 'a') { |f|
+  f.puts gems
+  }
 	system 'bundle install'
 	system 'rspec --init'
 	system 'git init'
